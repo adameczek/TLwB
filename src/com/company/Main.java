@@ -8,5 +8,6 @@ public class Main {
         Numbers numbers = new Numbers();
         //System.out.println("Euler= " + numbers.euler(7621));
         System.out.println("Odwrotnosc modulo=" + numbers.mmi(631, 11));
+        System.out.println("test");
     }
 }
