@@ -6,6 +6,7 @@ public class FermatTest {
     static int var = 2;
 
     public static void main(String[] args) {
+        System.out.println("Enter a number: ");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         checkIsItANaturalNumber(n);
