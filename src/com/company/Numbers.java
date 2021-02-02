@@ -1,7 +1,7 @@
 package com.company;
 
 public class Numbers {
-    private class NWD {
+    public static class NWD {
         private long a, b, x, y;
         private long nwd;
         public NWD(long a, long b) {
@@ -63,9 +63,9 @@ public class Numbers {
         }
 
     }
-    public int euler(int n) {
-        int numberOfPrimeNumbers = 1;
-        for (int i = 2; i < n; i++) {
+    public long euler(long n) {
+        long numberOfPrimeNumbers = 1;
+        for (long i = 2; i < n; i++) {
             NWD nwd = new NWD(i, n);
             if (nwd.getNwd() == 1)
                 numberOfPrimeNumbers++;
