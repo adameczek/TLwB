@@ -1,6 +1,6 @@
 package com.company;
 
-import javafx.util.Pair;
+//import javafx.util.Pair;
 
 import java.util.Random;
 

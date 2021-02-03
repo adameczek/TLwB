@@ -29,4 +29,14 @@ public class FermatTest {
             System.out.println(n + " is not a natural number.");
         }
     }
+        public static boolean isPrime(long inputNum)
+        {
+            if (inputNum <= 3 || inputNum % 2 == 0)
+                return inputNum == 2 || inputNum == 3;
+            int divisor = 3;
+            while ((divisor <= Math.sqrt(inputNum)) && (inputNum % divisor != 0))
+                divisor += 2;
+
+            return inputNum % divisor != 0;
+    }
 }
