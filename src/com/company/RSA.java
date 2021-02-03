@@ -11,7 +11,7 @@ public class RSA {
 //        BigInteger pow = bigC.pow(bigD.intValue());
 
         BigInteger m = bigC.modPow(bigD, bigN);
-        System.out.println("c^d = " + c + " ^ " + bigD.toString() + " =  " + m.toString());
+        System.out.println("c^d mod n = " + c + " ^ " + bigD.toString() + " mod " + bigN.toString() + " =  " + m.toString());
         return m.longValue();
     }
     public static long cipher(MyPublicKey key, long m) {
@@ -22,7 +22,7 @@ public class RSA {
 //        BigInteger pow = bigM.pow(bigE.intValue());
         BigInteger c = bigM.modPow(bigE, bigN);
 
-        System.out.println("m^e = " + m + " ^ " + bigE.toString() + " =  " + c.toString());
+        System.out.println("m^e mod n = " + m + " ^ " + bigE.toString() + " mod " + bigN.toString() + " =  " + c.toString());
         return c.longValue();
     }
     private static BigInteger pow(BigInteger base, BigInteger exponent) {

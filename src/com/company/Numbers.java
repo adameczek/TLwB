@@ -49,16 +49,18 @@ public class Numbers {
         }
 
     }
-    public long mmi(long a, long n) throws NoSuchInverseException {
+    public long mmi(long a, long n) {
         System.out.println("1. Obliczamy NWD dla a i n");
         NWD nwd = new NWD(a, n);
         System.out.println("NWD(" + a + ", " +  n + ") = " + nwd.getNwd());
+        System.out.println("Parametry nwd: \n x = " + nwd.getX() + "\n y = " + nwd.getY());
         System.out.println("2. Sprawdzamy czy NWD != 1: " + (nwd.getNwd()!=1));
         if (nwd.getNwd() != 1) {
-            throw new NoSuchInverseException("Odwrotnosc modulo dla danych liczb nie istnieje!");
+            System.out.println("Odwrotnosc modulo dla danych liczb nie istnieje!");
+            return 0;
         } else {
             long result = (nwd.getX() % n + n) % n;
-            System.out.println("3. Obliczamy wynik: " + result);
+            System.out.println("3. Obliczamy wynik: \n (x mod m + m) mod m");
             return result;
         }
 
