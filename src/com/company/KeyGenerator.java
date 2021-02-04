@@ -18,7 +18,7 @@ public class KeyGenerator {
         this.fn = (p -1)*(q - 1);
         System.out.println("fn = (p-1)*(q-1) = " + fn);
         this.e = generateE();
-        System.out.println("e to losowo wybrana liczba miedzy 1 a fn (" + fn +")");
+        System.out.println("e to losowo wybrana liczba miedzy 1 a fn (" + fn +"), wzglednie pierwsza z fn");
         System.out.println("1 < " + e + " < " + fn);
         this.d = generateD();
         System.out.println("d to odwrotnosc modularna liczby e, ktora jest podzielna przez fn");
@@ -47,7 +47,7 @@ public class KeyGenerator {
         FermatTest fermatTest = new FermatTest();
         Random ran = new Random();
         long randomNumber = ran.nextInt(2000099990);
-        while (!fermatTest.isPrime(randomNumber)) {
+        while (!fermatTest.isPrime(randomNumber, 3)) {
             randomNumber = ran.nextInt(2000099990) + 1;
         }
         return randomNumber;

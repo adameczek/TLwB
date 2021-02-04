@@ -16,14 +16,23 @@ public class Main {
         System.out.println("2. Sprawdzenie testem fermata czy podana liczba jest liczba pierwsza");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Podaj liczbe: ");
-        int n = scanner.nextInt();
-        FermatTest.checkIsItANaturalNumber(n);
+        long n = scanner.nextLong();
+        if (FermatTest.isPrime(n, 5)) {
+            System.out.println("Dana liczba jest liczba pierwsza");
+        } else {
+            System.out.println("Dana liczba nie jest liczba pierwsza");
+        }
+
         printBrake();
         System.out.println("3. Rozbicie podanej liczby na czynniki pierwsze");
+        System.out.print("Podaj liczbe: ");
+        n = scanner.nextLong();
+        System.out.println("Czynniki pierwsze tej liczby: ");
+        numbers.primeFactorization(n);
         printBrake();
         System.out.println("4. Wyswietlenie funkcji eulera dla podanej liczby");
         System.out.print("Podaj liczbe: ");
-        n = scanner.nextInt();
+        n = scanner.nextLong();
         System.out.print("Wartosc funkcji Eulera dla tej liczby: " + numbers.euler(n));
         printBrake();
         System.out.println("5. Wyswietlenie odwrotnosci modulo wprowadzonych liczb, uzywajac rozszerzonego algorytmu euklidesa");
@@ -69,7 +78,7 @@ public class Main {
         long max = 2000099990;
         System.out.print("(");
         for (long i = min; i < max; i++) {
-            if (FermatTest.isPrime(i))
+            if (FermatTest.isPrime(i, 3))
                 System.out.print(i + ", ");
         }
         System.out.print(")\n");

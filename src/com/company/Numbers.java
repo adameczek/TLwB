@@ -74,6 +74,18 @@ public class Numbers {
         }
         return numberOfPrimeNumbers;
     }
+    public void primeFactorization(long number) {
+        for (int i = 2; i < number; i++) {
+            while (number % i == 0) {
+                System.out.print(i + ", ");
+                number = number / i;
+            }
+        }
+        System.out.print("\b\b");
+        if(number >2) {
+            System.out.print(", " + number);
+        }
+    }
 
 
 }
